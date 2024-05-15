@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./index.module.css";
 
-function Index() {
+function Menu() {
   return (
     <div className={styles.menuContainer}>
       <div className={styles.iconWrapper}>
@@ -30,4 +30,4 @@ function Index() {
     </div>
   );
 }
-export default Index;
+export default Menu;

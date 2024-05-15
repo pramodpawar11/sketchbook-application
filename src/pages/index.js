@@ -8,14 +8,16 @@ import {
   faFileArrowDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Index from "@/components/Menu";
+import Menu from "@/components/Menu";
+import ToolBox from "@/components/ToolBoox";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <div>
-      <Index/>
+      <Menu/>
+      <ToolBox/>
     </div>
   );
 }
