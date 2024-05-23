@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./index.module.css";
-import { menuItemClick, actionMenuItem } from "@/slice/menuSlice";
+import { menuItemClick, actionItemClick } from "@/slice/menuSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { MENU_ITEMS } from "@/constant";
 import cx from "classnames"; // Import cx from classnames library
@@ -18,6 +18,9 @@ function Menu() {
   const activeMenuItem = useSelector((state) => state.menu.activeMenuItem);
   const handleClick = (item) => {
     dispatch(menuItemClick(item));
+  };
+  const handleActionItems = (items) => {
+    dispatch(actionItemClick(items));
   };
   return (
     <div className={styles.menuContainer}>
@@ -37,13 +40,22 @@ function Menu() {
       >
         <FontAwesomeIcon icon={faEraser} className={styles.icon} />
       </div>
-      <div className={styles.iconWrapper}>
+      <div
+        className={styles.iconWrapper}
+        onClick={() => handleActionItems(MENU_ITEMS.UNDO)}
+      >
         <FontAwesomeIcon icon={faRotateLeft} className={styles.icon} />
       </div>
-      <div className={styles.iconWrapper}>
+      <div
+        className={styles.iconWrapper}
+        onClick={() => handleActionItems(MENU_ITEMS.REDO)}
+      >
         <FontAwesomeIcon icon={faRotateRight} className={styles.icon} />
       </div>
-      <div className={styles.iconWrapper}>
+      <div
+        className={styles.iconWrapper}
+        onClick={() => handleActionItems(MENU_ITEMS.DOWNLOAD)}
+      >
         <FontAwesomeIcon icon={faFileArrowDown} className={styles.icon} />
       </div>
     </div>
